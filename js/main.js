@@ -68,6 +68,16 @@
     $(function () {
 
         $('#contact_form').validator();
+        $('#contact_form')
+            .on('invalid.bs.validator', function (ev) {
+                const el = ev.relatedTarget;
+                console.log('Invalid:', el.name || el.id, el.validationMessage);
+            })
+            .on('valid.bs.validator', function (ev) {
+                const el = ev.relatedTarget;
+                console.log('Valid:', el.name || el.id);
+            });
+
 
         $('#contact_form').on('submit', function (e) {
             if (!e.isDefaultPrevented()) {
