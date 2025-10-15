@@ -1,0 +1,365 @@
+/* ------------------------------------------------------------------
+   BreezyCV — Light Theme (colors only)
+   Palette:
+     --ink:        #1F2041  (Space Cadet)
+     --muted:      #595969  (Davy's Gray)
+     --silver:     #CECECE  (Silver)
+     --bg:         #FFFFFF  (White)
+     --lavender:   #F1EDFF  (Lavender)
+     --warm:       #FFE9D1  (Antique White)  [optional accent]
+-------------------------------------------------------------------*/
+
+/* ========== 1) Palette tokens (scoped) ========== */
+body.theme-light {
+  --ink:       #1F2041;
+  --muted:     #595969;
+  --silver:    #b4b2b5;
+  --bg:        #FFFFFF;
+  --lavender:  #F1EDFF;
+  --warm:      #FFE9D1;
+
+  color: var(--ink);
+  background: linear-gradient(var(--bg), var(--lavender));
+}
+
+/* Headings / links */
+body.theme-light h1,
+body.theme-light h2,
+body.theme-light h3,
+body.theme-light h4,
+body.theme-light h5,
+body.theme-light h6 { color: var(--ink); }
+
+body.theme-light a { color: var(--ink); }
+
+/* ========== 2) Layout shells ========== */
+/* Left/profile column uses lavender; right content is white */
+body.theme-light .page-content,
+body.theme-light .header { background-color: var(--lavender); }
+
+body.theme-light .content-area,
+body.theme-light .animated-sections,
+body.theme-light .animated-section,
+body.theme-light .section-content,
+body.theme-light .single-page-content { background-color: var(--bg); }
+
+/* Subtle separation between lavender → white */
+body.theme-light .content-area { box-shadow: -20px 0 30px -20px rgba(31,32,65,.10); }
+
+/* Preloader */
+body.theme-light .preloader,
+body.theme-light .preloader-portfolio { background: var(--bg); }
+body.theme-light .preloader-spinner { background-color: var(--ink); }
+
+/* ========== 3) Text balance ========== */
+body.theme-light p,
+body.theme-light span,
+body.theme-light li,
+body.theme-light small,
+body.theme-light .text-muted,
+body.theme-light .entry-meta,
+body.theme-light .entry-meta a,
+body.theme-light .portfolio-item-desc small,
+body.theme-light .timeline-second-style .item-company,
+body.theme-light .timeline-second-style .item-period,
+body.theme-light .fw-pricing .fw-pricing-row small,
+body.theme-light .blog-card .post-date { color: var(--muted); }
+
+body.theme-light .page-title:after,
+body.theme-light .block-title:after{
+  opacity:.55;
+  background-image: radial-gradient(var(--silver) 1px, transparent 1px);
+  -webkit-background-size:6px 6px; background-size:6px 6px;
+} /* keep */
+
+/* ========== 4) Buttons ========== */
+body.theme-light .btn-primary,
+body.theme-light .btn-secondary,
+body.theme-light button,
+body.theme-light input[type="button"],
+body.theme-light input[type="submit"],
+body.theme-light .wp-block-button .wp-block-button__link {
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  box-shadow: 0 10px 10px -8px rgba(0,0,0,.08);
+}
+body.theme-light .btn-primary:hover,
+body.theme-light .btn-primary:focus,
+body.theme-light button:hover,
+body.theme-light button:focus,
+body.theme-light input[type="button"]:hover,
+body.theme-light input[type="button"]:focus,
+body.theme-light input[type="submit"]:hover,
+body.theme-light input[type="submit"]:focus {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+body.theme-light .btn-secondary { border-color: var(--silver); }
+body.theme-light .btn-secondary:hover,
+body.theme-light .btn-secondary:focus {
+  background: var(--lavender);
+  border-color: var(--lavender);
+}
+
+/* ========== 5) Forms ========== */
+body.theme-light .form-control,
+body.theme-light .form-control:focus,
+body.theme-light .has-error .form-control,
+body.theme-light .has-error .form-control:focus,
+body.theme-light input[type="search"],
+body.theme-light input[type="password"],
+body.theme-light input[type="text"] {
+  border: 2px solid var(--silver);
+  background: transparent;
+  color: var(--ink);
+  box-shadow: 0 10px 10px -8px rgba(0,0,0,.06);
+  outline: none;
+}
+body.theme-light .form-control ~ .form-control-border { border: 2px solid var(--ink); background: transparent; }
+body.theme-light .form-group label { color: var(--muted); }
+body.theme-light .form-group .help-block { background:#f8d7da; color:#721c24; }
+body.theme-light .form-group .help-block:after {
+  border-bottom:10px solid #f8d7da; border-right:10px solid transparent;
+}
+body.theme-light .form-group-with-icon i { color:#B8B8B8; }
+body.theme-light .form-group-with-icon.form-group-focus i { color: var(--ink); }
+body.theme-light .form-control::placeholder { color:#9FA2A9; }
+
+/* ========== 6) Scrollbar (perfect-scrollbar) ========== */
+body.theme-light .ps>.ps__scrollbar-y-rail>.ps__scrollbar-y { background: var(--muted); }
+body.theme-light .ps:hover>.ps__scrollbar-y-rail:hover { background: var(--lavender); }
+body.theme-light .ps:hover>.ps__scrollbar-y-rail:hover>.ps__scrollbar-y { background: var(--ink); }
+
+/* ========== 7) Cards / blocks ========== */
+body.theme-light .lm-info-block,
+body.theme-light .fun-fact,
+body.theme-light .fw-pricing .fw-package,
+body.theme-light .project-description,
+body.theme-light .entry-meta.entry-meta-bottom,
+body.theme-light .blog-card,
+body.theme-light .testimonial {
+  background: var(--lavender);
+  border-color: var(--silver);
+  color: var(--ink);
+}
+body.theme-light .lm-info-block .lm-info-block-value,
+body.theme-light .lm-info-block i,
+body.theme-light .fun-fact i { color: var(--ink); }
+body.theme-light .testimonial { border-width: 2px; }
+
+/* Timeline */
+body.theme-light .timeline-second-style .divider { background: var(--silver); }
+body.theme-light .timeline-second-style .divider:before { background: var(--ink); opacity:.25; }
+body.theme-light .timeline-second-style .divider:after { background: var(--bg); border:2px solid var(--ink); }
+
+/* Skills */
+body.theme-light .skills-second-style .skill-container {
+  background: var(--bg);
+  border: 1px solid var(--ink);
+}
+body.theme-light .skills-second-style .skill-percentage {
+  background: var(--ink);
+  border: 2px solid var(--bg);
+}
+body.theme-light .skills-second-style .skill-value { color: var(--muted); }
+
+/* Chips / tags / knowledges */
+body.theme-light .knowledges li {
+  background: var(--lavender);
+  color: var(--ink);
+}
+body.theme-light .tags a {
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--silver);
+}
+
+/* Certificates */
+body.theme-light .certificate-item { border: 2px solid var(--silver); }
+body.theme-light .certi-logo { background: var(--lavender); }
+body.theme-light .certi-id,
+body.theme-light .certi-date { color: var(--muted); }
+/* Light mode tweaks */
+body.theme-light .certificate-item{ background:#fff; border-color:#e6e1f2; }
+body.theme-light .certi-logo{ background:#f3f0fa; border-right-color:#ddd3f5; }
+body.theme-light .certi-list li{ color:#3f3b50; }
+body.theme-light .certi-date{ color:#6a667d; }
+body.theme-light .certificate-item:hover {
+  border-color: var(--silver);
+  transition: 0.2s ease;
+}
+
+/* Portfolio */
+body.theme-light .portfolio-filters li a { color: var(--muted); }
+body.theme-light .portfolio-grid figure i { background: var(--bg); color: var(--ink); }
+body.theme-light .portfolio-grid figure .category { background: var(--bg); color: var(--ink); }
+
+/* Blog */
+body.theme-light .blog-card { background: var(--bg); }
+body.theme-light .blog-card .post-without-f-image { background: var(--lavender); }
+body.theme-light .blog-card .post-info { border: 1px solid var(--silver); border-top: 0; }
+body.theme-light .blog-card .category a { background: var(--bg); color: var(--ink); }
+body.theme-light .sticky-badge { background: var(--bg); color: var(--muted); }
+
+/* Ajax page overlay */
+body.theme-light .page-ajax-loaded,
+body.theme-light .ajax-page-content { background: var(--bg); }
+body.theme-light .ajax-page-nav > .nav-item a {
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--silver);
+}
+body.theme-light .ajax-page-nav > .nav-item a:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+/* Carousel dots */
+body.theme-light .portfolio-page-carousel .owl-nav [class*='owl-'] {
+  color: var(--silver);
+  background: var(--bg);
+}
+body.theme-light .portfolio-page-carousel .owl-dots .owl-dot span {
+  background: rgba(208, 173, 240, 0.75);
+  border: 1px solid var(--silver);
+}
+body.theme-light .portfolio-page-carousel .owl-dots .owl-dot.active span,
+body.theme-light .portfolio-page-carousel .owl-dots .owl-dot:hover span {
+  background: rgba(155, 140, 169, 0.75);
+}
+/* --- Light theme version of project card gradient --- */
+body.theme-light .portfolio-grid figure .portfolio-item-img::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(220, 200, 255, 0.35) 0%,   /* soft lavender top */
+    rgba(200, 200, 210, 0.85) 100%  /* silver base */
+  );
+  opacity: 1;
+  transition: background 0.4s ease, opacity 0.4s ease;
+}
+
+/* stronger gradient on hover (lavender tint deepens slightly) */
+body.theme-light .portfolio-grid figure:hover .portfolio-item-img::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(190, 170, 255, 0.45) 0%,   /* deeper lavender */
+    rgba(170, 170, 190, 0.95) 100%  /* stronger silver tone */
+  );
+}
+
+/* tweak hover text color for light mode (darker grayish text looks smoother) */
+body.theme-light .project-hover-text {
+  color: #2c2c2c;
+  text-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
+
+/* Posts */
+body.theme-light .post-thumbnail { background: var(--silver); }
+body.theme-light .single-page-content .post-content { background: var(--bg); }
+body.theme-light .entry-header .entry-meta { color: var(--muted); }
+body.theme-light .entry-meta.entry-meta-bottom .date-author > span:after { background: var(--silver); }
+body.theme-light blockquote { border-left: 2px solid var(--silver); }
+
+/* Pricing */
+body.theme-light .fw-pricing .fw-package {
+  background: var(--lavender);
+  border: 2px solid var(--silver);
+}
+body.theme-light .fw-pricing .fw-pricing-row span { color: var(--ink); }
+body.theme-light .fw-pricing .fw-pricing-row small { color: var(--muted); }
+body.theme-light .fw-pricing .fw-package-wrap.highlight-col .fw-heading-row span:after {
+  background: var(--ink);
+}
+
+/* Tables */
+body.theme-light .fw-table table { border: 1px solid var(--silver); }
+body.theme-light .fw-table table tr,
+body.theme-light .fw-table table tr.heading-row { border-bottom: 1px solid var(--silver); }
+body.theme-light .fw-table table th,
+body.theme-light .fw-table table td { border-right: 1px solid var(--silver); }
+body.theme-light .fw-table table td:last-child { border-right: 0; }
+
+/* Big title */
+body.theme-light .title-block h2 { color: var(--ink); }
+body.theme-light .title-block .sp-subtitle { color: var(--muted); }
+
+/* Start-page overlay (kept subtle) */
+body.theme-light .start-page .mask { background: rgba(31,32,65,.05); }
+
+/* Alerts */
+body.theme-light .alert { border: 2px solid transparent; }
+body.theme-light .alert-success { color:#155724; background:#d4edda; border-color:#c3e6cb; }
+body.theme-light .alert-danger  { color:#721c24; background:#f8d7da; border-color:#f5c6cb; }
+
+/* ===== Info List & Icons — make silver in light mode ===== */
+body.theme-light .info-list .title {
+  color: var(--silver) !important;
+}
+
+body.theme-light .info-block-w-icon i {
+  color: var(--silver) !important;
+}
+
+/* ===== Social Icons - Light Theme ===== */
+body.theme-light .social-links ul li a {
+  color: var(--muted) !important;   /* silver base */
+  background: transparent !important;
+}
+
+body.theme-light .social-links ul li a:hover {
+  color: var(--ink) !important;      /* dark text on hover */
+  background: rgba(0,0,0,0.05) !important;  /* subtle hover background */
+}
+
+
+/* ========== 8) Navigation ========== */
+/* Desktop */
+@media (min-width: 1025px) {
+  body.theme-light ul.main-menu {
+    background: var(--bg);
+    box-shadow: 0 0 30px -5px rgba(0,0,0,.08);
+  }
+  body.theme-light ul.main-menu a { color: var(--muted); border-bottom: 1px solid var(--lavender); }
+  body.theme-light ul.main-menu .link-text { color: var(--muted); background: transparent; }
+
+  /* Active / hover — icon and label */
+  body.theme-light ul.main-menu li.active > a,
+  body.theme-light ul.main-menu li.current-menu-item > a,
+  body.theme-light ul.main-menu a.active,
+  body.theme-light ul.main-menu a:hover,
+  body.theme-light ul.main-menu a:focus { color: #0b0d35; }
+
+  body.theme-light ul.main-menu li.active > a .link-text,
+  body.theme-light ul.main-menu li.current-menu-item > a .link-text,
+  body.theme-light ul.main-menu a.active .link-text,
+  body.theme-light ul.main-menu a:hover .link-text,
+  body.theme-light ul.main-menu a:focus .link-text { color: #0b0d35; }
+
+  body.theme-light .lmpixels-arrows-nav {
+    background: var(--bg);
+    border: 2px solid var(--silver);
+  }
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  body.theme-light .header { background: var(--silver); }
+  body.theme-light ul.main-menu a { color: var(--ink); }
+  body.theme-light .menu-toggle { background: var(--ink); }
+  body.theme-light .menu-toggle span { background: var(--bg); }
+  body.theme-light .lmpixels-arrows-nav {
+    background: rgba(255,255,255,.85);
+    border: 2px solid var(--silver);
+  }
+}
+
+/* Small screens: carousel nav tint */
+@media (max-width: 768px) {
+  body.theme-light .portfolio-page-carousel .owl-nav .owl-prev,
+  body.theme-light .portfolio-page-carousel .owl-nav .owl-next {
+    background: rgba(155, 140, 169, 0.75);
+  }
+}
