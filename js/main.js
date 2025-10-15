@@ -66,43 +66,56 @@
 
     // Contact form validator
     $(function () {
+    // keep validator (optional: disable:false while testing)
+    $('#contact_form').validator({ /* disable: false */ });
 
-        $('#contact_form').validator();
-        $('#contact_form')
-            .on('invalid.bs.validator', function (ev) {
-                const el = ev.relatedTarget;
-                console.log('Invalid:', el.name || el.id, el.validationMessage);
-            })
-            .on('valid.bs.validator', function (ev) {
-                const el = ev.relatedTarget;
-                console.log('Valid:', el.name || el.id);
-            });
+    $('#contact_form')
+        .on('invalid.bs.validator', function (ev) {
+        const el = ev.relatedTarget;
+        console.log('Invalid:', el.name || el.id, el.validationMessage);
+        })
+        .on('valid.bs.validator', function (ev) {
+        const el = ev.relatedTarget;
+        console.log('Valid:', el.name || el.id);
+        });
 
+    $('#contact_form').on('submit', function (e) {
+        if (!e.isDefaultPrevented()) {
+        // 🔁 use your Formspree endpoint
+        var url = "https://formspree.io/f/xwpraorn";
+        var $form = $(this);
 
-        $('#contact_form').on('submit', function (e) {
-            if (!e.isDefaultPrevented()) {
-                var url = "contact_form/contact_form.php";
-
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: $(this).serialize(),
-                    success: function (data)
-                    {
-                        var messageAlert = 'alert-' + data.type;
-                        var messageText = data.message;
-
-                        var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                        if (messageAlert && messageText) {
-                            $('#contact_form').find('.messages').html(alertBox);
-                            $('#contact_form')[0].reset();
-                        }
-                    }
-                });
-                return false;
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $form.serialize(),            // includes all inputs with name=...
+            headers: { 'Accept': 'application/json' }, // tell Formspree we want JSON
+            success: function () {
+            var alertBox = '<div class="alert alert-success alert-dismissable">' +
+                            '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
+                            'Thanks! Your message has been sent.' +
+                            '</div>';
+            $('#contact_form').find('.messages').html(alertBox);
+            $('#contact_form')[0].reset();
+            },
+            error: function (xhr) {
+            // Try to show Formspree validation errors if present
+            var msg = 'Oops, something went wrong. Please try again or email me directly.';
+            if (xhr.responseJSON && xhr.responseJSON.errors) {
+                msg = xhr.responseJSON.errors.map(e => e.message).join('<br>');
+            }
+            var alertBox = '<div class="alert alert-danger alert-dismissable">' +
+                            '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
+                            msg +
+                            '</div>';
+            $('#contact_form').find('.messages').html(alertBox);
             }
         });
+        return false; // prevent normal submit
+        }
     });
+    });
+
     // /Contact form validator
 
     //On Window load & Resize
