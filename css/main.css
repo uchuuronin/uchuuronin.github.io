@@ -1305,20 +1305,20 @@ textarea.form-control, textarea.form-control:focus {
 .skills-second-style .skill-container:before {
   content: '';
   position: absolute;
-  background-color: #d98f1f;
+  background-color: #ae710e;
 }
 
 .skills-second-style .skill-value {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.1em;
   position: relative;
   float: right;
   margin: 0 0 4px;
-  color: #DABCEB;
+  color: #ffffff;
 }
 
 .skills-second-style .skill-percentage {
-  background-color: #d98f1f;
+  background-color: #ae710e;
   border: 2px solid #030107;
   -moz-border-radius: 9px;
   -webkit-border-radius: 9px;
